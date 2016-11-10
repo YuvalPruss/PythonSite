@@ -1,39 +1,86 @@
 $icon-font-path: '../fonts/';
 
-$mainBackground: rgb(241,241,241);
+$mainBackground: #e9ebee;
 $headerBackground: rgb(210,210,210);
+$boxBackground: white;
+$boxBorderColor: rgb(208,209,213);
 
-$boundary: 10.5%;
-$textSize: 1.7rem;
+$boundary: 6rem;
+$textSize: 2rem;
+$main-font: 'Open Sans Hebrew','almoni-dl-regular', Arial, Helvetica, sans-serif;
 
 // bower:scss
+@import "app/styles/_fonts.scss";
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-body {
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	background-color: $mainBackground;
-	direction: rtl;
+@mixin reset_element($zise) {
+  margin: $zise;
+  padding: $zise;
+}
+
+@mixin border($borderColor) {
+  border: 1px solid $borderColor;
+}
+
+html, body {
+  @include reset_element(0);
+
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+  max-width: 100vw;
+  background-color: $mainBackground;
+  direction: rtl;
+
+  font-family: $main-font;
+}
+
+.row {
+  @include reset_element(0);
 }
 
 header {
-	background-color: $headerBackground;
-	height: $boundary;
-	padding: 0px;
-	#search-box {
-	}
-	h2 {
-		line-height: 1.1;
-		font-size: $textSize;
-		float: right;
-	}
+  background-color: $headerBackground;
+  height: $boundary;
+  padding: 0px;
+  #search-box {
+
+  }
+  h2 {
+    line-height: 1.1;
+	
+	font-size: $textSize;
+	float: right;
+  }
 }
 
 #main-screen {
+  .box-all {
+    @include border($boxBorderColor);
 
+    background-color: $boxBackground;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    .box-header {
+      .tags-box {
+        height: $boundary;
+      }
+      .box-title {
+        height: $boundary;
+        font-size: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+      }	
+    }
+    .box-content {
+      @include border($boxBorderColor);
+      text-align: right;
+      margin-bottom: 1.2rem;
+    }
+  }
 }
 
 footer {

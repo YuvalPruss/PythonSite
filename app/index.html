@@ -4,80 +4,68 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>הפייתון היומי</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
     
-    <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
   </head>
   <body>
     <header class="row">
-      <div id="search-box" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-      	
+      <div id="header-options" class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
       </div>
+
+      <div id="search-centered" class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div id="search-box" class="input-group input-group-lg col-lg-10 col-lg-offset-1">
+          <input id="main-searchbox" name="main-searchbox" type="search" class="form-control" placeholder="חפש באתר" required="" autocomplete="on" aria-describedby="type-of-search"> 
+          <div id="search-icon" class="input-group-addon">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+      </div>
+
       <h2 class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         הפייתון היומי
       </h2>
     </header>
+
+
     <div id="main-screen" class="row">
-      <div class="box-all col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xs-offset-0 col-sm-offset-1 col-md-offset-0 col-lg-offset-2">
+      <div class="box-all col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-2">
       	<div class="box-header">
           <div class="tags-box col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          	1234
+          	<div class="tag" style="background-color:#a295d6;color:black;">
+          	  פייתון 3
+          	</div>
+          	<div class="tag" style="background-color:#428bca;color:white;">
+          	  פונקציות מובנות
+          	</div>
+          	<div class="tag" style="background-color:#5CB85C;color:white;">
+          	  סתם תגית
+          	</div>
           </div>	
           <div class="box-title col-xs-10 col-sm-10 col-md-10 col-lg-10">
-            <הכותרת>
+            הכותרת
           </div>
       	</div>
- 
         <div class="box-content col-xs-12 col-sm-12 col-md-12 col-lg-12">
           התוכן של הריבוע הזה... תוכן מאוד חשוב שאנחנו נדבר על עוד שנים...</br>
           התוכן של הריבוע הזה... תוכן מאוד חשוב שאנחנו נדבר על עוד שנים...
         </div>
       </div>
+
     </div>
+
+
     <footer class="row">
-      <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        footer
-      </div>-->
+      
     </footer>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/main.js -->
+        
     <script src="scripts/main.js"></script>
-    <!-- endbuild -->
   </body>
 </html>

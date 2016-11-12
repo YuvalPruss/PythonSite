@@ -1,22 +1,31 @@
-$icon-font-path: '../fonts/';
-
 $mainBackground: #e9ebee;
 $headerBackground: rgb(210,210,210);
 $boxBackground: white;
 $boxBorderColor: rgb(208,209,213);
 
 $boundary: 6rem;
+$tagHeight: 2.2rem;
 $textSize: 2rem;
+$iconHeaderSize: 2.4rem;
+$borderSize: 8px;
 $main-font: 'Open Sans Hebrew','almoni-dl-regular', Arial, Helvetica, sans-serif;
 
-// bower:scss
-@import "app/styles/_fonts.scss";
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// endbower
+$fa-font-path: "../fonts" !default;
+$icon-font-path: "../fonts/";
+$enable-flex: true;
 
-@mixin reset_element($zise) {
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+@import "app/styles/live-fonts.scss";
+
+@mixin resetElement($zise) {
   margin: $zise;
   padding: $zise;
+}
+
+@mixin clearBorder() {
+  border-radius: 0;
+  border: 0;
 }
 
 @mixin border($borderColor) {
@@ -24,7 +33,7 @@ $main-font: 'Open Sans Hebrew','almoni-dl-regular', Arial, Helvetica, sans-serif
 }
 
 html, body {
-  @include reset_element(0);
+  @include resetElement(0);
 
   height: 100%;
   width: 100%;
@@ -37,21 +46,57 @@ html, body {
 }
 
 .row {
-  @include reset_element(0);
+  @include resetElement(0);
 }
 
 header {
   background-color: $headerBackground;
   height: $boundary;
-  padding: 0px;
-  #search-box {
+  padding: 0;
 
+
+  #search-centered {
+    height: $boundary;
+
+    #search-box {
+      padding-top: 0.5rem;
+      #search-icon {
+        @include clearBorder();
+        border-top-left-radius: $borderSize;
+        border-bottom-left-radius: $borderSize;
+        background-color: white;
+      }
+      #main-searchbox{
+        border: none;
+        @include clearBorder();
+        border-top-right-radius: $borderSize;
+        border-bottom-right-radius: $borderSize;
+      }
+      #main-searchbox:focus  {
+        box-shadow: none;
+      }
+      #main-searchbox::placeholder {
+        opacity: 0.5;
+      }
+    }
   }
+
+
+  #header-options {
+    @include resetElement(0);
+    height: $boundary;
+    .header-icon {
+      line-height: 5rem;
+      font-size: $iconHeaderSize;
+      cursor: pointer;
+      margin-right: 0.4rem;
+    }
+  }
+
+
   h2 {
-    line-height: 1.1;
-	
-	font-size: $textSize;
-	float: right;
+    line-height: 2rem;
+    font-size: $textSize;
   }
 }
 
@@ -63,17 +108,27 @@ header {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 3px;
+    padding: 0;
     .box-header {
       .tags-box {
-        height: $boundary;
+        margin-bottom: 1rem;
+        height: calc(#{$tagHeight} * 3);
+        .tag {
+          text-align: center;
+          white-space: nowrap;
+          border-radius: .25rem;
+          height: $tagHeight;
+          margin-top: 0.2rem;
+        }
       }
       .box-title {
         height: $boundary;
         font-size: 2rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        text-align: center;
-      }	
+        text-align: right;
+        font-weight: 700;
+      } 
     }
     .box-content {
       @include border($boxBorderColor);
